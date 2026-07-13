@@ -3,7 +3,6 @@ import {
   ArrowDownRight,
   ArrowUpRight,
   BrainCircuit,
-  Menu,
   MoveUpRight,
   Sparkles,
   Waves,
@@ -28,7 +27,6 @@ export default function Home() {
             <a href="#platform">Platform</a>
             <a href="#contact">Contact</a>
           </div>
-          <button className="menu-button" aria-label="Open menu"><Menu size={20} /></button>
         </nav>
 
         <div className="hero-grid">
