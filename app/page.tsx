@@ -7,6 +7,7 @@ import {
   Sparkles,
   Waves,
 } from "lucide-react";
+import { LiquidNav } from "./components/liquid-nav";
 
 const capabilities = [
   ["01", "Embodied AI", "Perceive, reason and respond to the physical world in real time."],
@@ -17,18 +18,8 @@ const capabilities = [
 export default function Home() {
   return (
     <main>
+      <LiquidNav />
       <section className="hero" id="top">
-        <nav className="nav shell" aria-label="Primary navigation">
-          <a className="wordmark" href="#top" aria-label="Xibotix home">
-            <span className="wordmark-mark" />XIBOTIX
-          </a>
-          <div className="nav-links">
-            <a href="#domains">Domains</a>
-            <a href="#platform">Platform</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
-
         <div className="hero-stage shell">
           <div className="hero-copy">
             <p className="eyebrow"><span className="dot mint" /> Intelligence in motion</p>
