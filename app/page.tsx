@@ -29,30 +29,30 @@ export default function Home() {
           </div>
         </nav>
 
-        <div className="hero-grid">
-          <a className="hero-panel robotics" href="#robotics" aria-label="Explore humanoid robotics">
-            <Image src="/images/humanoid-hero.png" alt="Humanoid robot interacting with a blue spatial interface" fill priority sizes="(max-width: 760px) 100vw, 50vw" className="panel-image" />
-            <div className="panel-gradient" />
-            <div className="panel-content">
-              <span className="eyebrow"><span className="dot blue" /> 01 / Humanoid robotics</span>
-              <h2>Machines that<br />move with meaning.</h2>
-              <span className="panel-link">Explore robotics <ArrowUpRight size={18} /></span>
-            </div>
+        <div className="hero-stage shell">
+          <div className="hero-copy">
+            <p className="eyebrow"><span className="dot mint" /> Intelligence in motion</p>
+            <h1>Technology that<br /><em>moves life forward.</em></h1>
+            <p>We unite physical intelligence and human-centred design to create systems that expand capability.</p>
+            <a className="hero-button" href="#domains">Explore our work <ArrowDownRight size={18} /></a>
+          </div>
+
+          <a className="product-window robotics-window" href="#robotics" aria-label="Explore humanoid robotics">
+            <Image src="/images/humanoid-hero.png" alt="Humanoid robot interacting with a blue spatial interface" fill priority sizes="(max-width: 760px) 84vw, 38vw" className="window-image" />
+            <span className="window-sheen" />
+            <span className="window-meta"><span><i className="dot blue" /> 01</span> Humanoid robotics <ArrowUpRight size={15} /></span>
           </a>
-          <a className="hero-panel rehabilitation" href="#rehabilitation" aria-label="Explore rehabilitation devices">
-            <Image src="/images/rehab-hero.png" alt="A person walking with a precision robotic rehabilitation exoskeleton" fill priority sizes="(max-width: 760px) 100vw, 50vw" className="panel-image" />
-            <div className="panel-gradient" />
-            <div className="panel-content">
-              <span className="eyebrow"><span className="dot mint" /> 02 / Rehabilitation devices</span>
-              <h2>Every step,<br />made possible.</h2>
-              <span className="panel-link">Explore rehabilitation <ArrowUpRight size={18} /></span>
-            </div>
+          <a className="product-window rehabilitation-window" href="#rehabilitation" aria-label="Explore rehabilitation devices">
+            <Image src="/images/rehab-hero.png" alt="A person walking with a precision robotic rehabilitation exoskeleton" fill priority sizes="(max-width: 760px) 84vw, 38vw" className="window-image" />
+            <span className="window-sheen" />
+            <span className="window-meta"><span><i className="dot mint" /> 02</span> Rehabilitation devices <ArrowUpRight size={15} /></span>
           </a>
+          <div className="stage-orbit" aria-hidden="true"><span /><span /><span /></div>
         </div>
 
-        <div className="hero-statement">
-          <p>Intelligence in motion.</p>
-          <span>We engineer adaptive systems that expand what people and machines can do.</span>
+        <div className="hero-statement shell">
+          <p>01—02 / One platform</p>
+          <span>Humanoid robotics + rehabilitation devices, designed with equal intent.</span>
           <a href="#domains" aria-label="Scroll to domains"><ArrowDownRight size={21} /></a>
         </div>
       </section>
