@@ -123,7 +123,7 @@ export default function Home() {
       <footer className="footer shell">
         <a className="wordmark footer-mark" href="#top"><span className="wordmark-mark" />XIBOTIX</a>
         <p>Engineering a more capable world.</p>
-        <p>© 2026 Xibotix. Concept landing page.</p>
+        <p>&copy; 2026 Xibotix. Concept landing page.</p>
       </footer>
     </main>
   );
