@@ -3,39 +3,70 @@
 import { useEffect, useState } from "react";
 
 const navigationItems = [
-  { id: "domains", label: "Domains" },
   { id: "platform", label: "Platform" },
+  { id: "domains", label: "Domains" },
   { id: "contact", label: "Contact" },
 ] as const;
 
 type SectionId = (typeof navigationItems)[number]["id"];
 
 export function LiquidNav() {
-  const [activeSection, setActiveSection] = useState<SectionId>("domains");
+  const [activeSection, setActiveSection] = useState<SectionId>("platform");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    // Use a scroll-based calculation: pick the section whose center
+    // is closest to the viewport center. This is more stable across
+    // different screen sizes and avoids flicker from intersectionRatio.
+    const sections = navigationItems
+      .map(({ id }) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
 
-        if (visibleEntry) setActiveSection(visibleEntry.target.id as SectionId);
-      },
-      { rootMargin: "-35% 0px -45% 0px", threshold: [0.1, 0.3, 0.6] },
-    );
+    if (sections.length === 0) return;
 
-    navigationItems.forEach(({ id }) => {
-      const section = document.getElementById(id);
-      if (section) observer.observe(section);
-    });
+    let ticking = false;
 
-    return () => observer.disconnect();
+    const updateActive = () => {
+      const viewportCenter = window.innerHeight / 2;
+      let closestId: SectionId = sections[0].id as SectionId;
+      let minDist = Infinity;
+
+      sections.forEach((s) => {
+        const rect = s.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+        const dist = Math.abs(sectionCenter - viewportCenter);
+        if (dist < minDist) {
+          minDist = dist;
+          closestId = s.id as SectionId;
+        }
+      });
+
+      setActiveSection(closestId);
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          updateActive();
+          ticking = false;
+        });
+      }
+    };
+
+    // Initial calculation and listeners
+    updateActive();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
     <nav className="nav" aria-label="Primary navigation">
-      <a className="wordmark" href="#top" onClick={() => setActiveSection("domains")} aria-label="Xibotix home">
+      <a className="wordmark" href="#top" onClick={() => setActiveSection("platform")} aria-label="Xibotix home">
         <span className="wordmark-mark" />XIBOTIX
       </a>
       <div className="nav-links" data-active={activeSection}>
