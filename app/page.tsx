@@ -49,7 +49,16 @@ export default function Home() {
       </section>
 
       <section className="manifesto shell section-pad" id="platform">
-        <p className="eyebrow dark"><Sparkles size={15} /> One intelligent platform</p>
+        <div className="platform-left-image">
+  <Image
+    src="/images/image.png"
+    alt="One Intelligent Platform"
+    width={420}
+    height={420}
+    className="platform-image"
+    priority
+  />
+</div>
         <div className="manifesto-copy">
           <h1>Different frontiers.<br /><em>One human instinct.</em></h1>
           <p>Whether we are teaching a humanoid to understand its environment or helping someone rediscover their stride, our work begins in the same place: a deeper understanding of motion.</p>
