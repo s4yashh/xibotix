@@ -53,8 +53,8 @@ export default function Home() {
   <Image
     src="/images/image.png"
     alt="One Intelligent Platform"
-    width={420}
-    height={420}
+    width={460}
+    height={460}
     className="platform-image"
     priority
   />
