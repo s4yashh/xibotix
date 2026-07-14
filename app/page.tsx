@@ -43,7 +43,7 @@ export default function Home() {
 
         <div className="hero-statement shell">
           <p>01—02 / One platform</p>
-          <span>Humanoid robotics + rehabilitation devices, designed with equal intent.</span>
+          
           <a href="#domains" aria-label="Scroll to domains"><ArrowDownRight size={21} /></a>
         </div>
       </section>
