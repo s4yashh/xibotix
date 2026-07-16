@@ -25,5 +25,3 @@ Open `http://localhost:3000`.
 npm run typecheck
 npm run build
 ```
-
-See [AI_USAGE.md](AI_USAGE.md) for the required AI declaration and [SUBMISSION.md](SUBMISSION.md) for the Google Drive submission checklist.
