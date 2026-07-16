@@ -4,3 +4,5 @@
 .env*.local
 *.tsbuildinfo
 .vercel
+AI_USAGE.md
+SUBMISSION.md
